@@ -1,9 +1,12 @@
 # Talk to my Hand 👋🏽
 
-## ds-modeling-pipeline
+## Tpic
 We want to develop an application that enables deaf people to communicate with hearing individuals who do not know sign language. The app should recognize signs, translate them into text, and then convert this text into spoken language.
 
-
+## Goals
+1. Sign Language Recognition: Capturing gestures using a camera.
+2. Translation: Converting the recognized gestures into text.
+3. Audio Output: Transforming the text into spoken language.
 
 
 # ds-modeling-pipeline
