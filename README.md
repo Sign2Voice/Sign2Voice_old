@@ -9,6 +9,11 @@ We want to develop an application that enables deaf people to communicate with h
 3. Audio Output: Transforming the text into spoken language.
 
 
+## Alignments
+1. Focus on Minimal Viable Product (MVP): Start with a small vocabulary (e.g., numbers, basic words, or a simple sentence).
+2. Iteration: Add additional gestures and improvements based on testing if time permits.
+
+
 # ds-modeling-pipeline
 
 Here you find a Skeleton project for building a simple model in a python script or notebook and log the results on MLFlow.
