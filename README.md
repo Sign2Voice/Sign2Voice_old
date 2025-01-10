@@ -1,3 +1,11 @@
+# Talk to my Hand 👋🏽
+
+## ds-modeling-pipeline
+We want to develop an application that enables deaf people to communicate with hearing individuals who do not know sign language. The app should recognize signs, translate them into text, and then convert this text into spoken language.
+
+
+
+
 # ds-modeling-pipeline
 
 Here you find a Skeleton project for building a simple model in a python script or notebook and log the results on MLFlow.
