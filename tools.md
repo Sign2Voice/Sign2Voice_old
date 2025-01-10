@@ -1,10 +1,10 @@
-#Tools
+# Tools
 
-##Kamera-basierte Gestenerkennung:
+## Kamera-basierte Gestenerkennung:
+- OpenCV: Für die Verarbeitung von Videostreams.
+- Mediapipe: Für die Hand- und Fingerverfolgung (leicht zu implementieren).
 
-OpenCV: Für die Verarbeitung von Videostreams.
-Mediapipe: Für die Hand- und Fingerverfolgung (leicht zu implementieren).
-##Modelltraining für Gebärdensprachen:
+## Modelltraining für Gebärdensprachen:
 
 TensorFlow/Keras oder PyTorch: Für Machine Learning-Modelle.
 Dataset: Nutzt vorhandene öffentliche Datensätze für Gebärdensprachen (z. B. ASL FingerSpelling Dataset).
