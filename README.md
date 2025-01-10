@@ -1,6 +1,6 @@
 # Talk to my Hand 👋🏽
 
-## Tpic
+## Topic
 We want to develop an application that enables deaf people to communicate with hearing individuals who do not know sign language. The app should recognize signs, translate them into text, and then convert this text into spoken language.
 
 ## Goals
