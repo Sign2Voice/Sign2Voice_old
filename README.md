@@ -8,6 +8,8 @@ We want to develop an application that enables deaf people to communicate with h
 2. Translation: Converting the recognized gestures into text.
 3. Audio Output: Transforming the text into spoken language.
 
+## Data
+We used the RWTH-PHOENIX-Weather 2014 T Dataset, which you can [download](https://www-i6.informatik.rwth-aachen.de/~koller/RWTH-PHOENIX-2014-T/) here.
 
 ## Alignments
 1. Focus on Minimal Viable Product (MVP): Start with a small vocabulary (e.g., numbers, basic words, or a simple sentence).
