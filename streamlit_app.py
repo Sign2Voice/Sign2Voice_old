@@ -38,7 +38,7 @@ if st.button("Stop Stream"):
     st.session_state.start_time = None  # Reset start time
 
 # Output folder for the frames
-output_folder = "saved_frames"  # Set folder name
+output_folder = "data/saved_stream_frames"  # Set folder name
 
 # Video capture object
 cap = cv2.VideoCapture(0)  # 0 for the webcam
