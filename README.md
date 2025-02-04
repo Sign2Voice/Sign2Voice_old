@@ -8,6 +8,9 @@ We want to develop an application that enables deaf people to communicate with h
 2. Translation: Converting the recognized gestures into text.
 3. Audio Output: Transforming the text into spoken language.
 
+
+To Run the Application use ```BASH streamlit run st_to_txt/streamlit_app.py ```
+
 ## Data
 We used the RWTH-PHOENIX-Weather 2014 T Dataset, which you can [download](https://www-i6.informatik.rwth-aachen.de/~koller/RWTH-PHOENIX-2014-T/) here.
 
