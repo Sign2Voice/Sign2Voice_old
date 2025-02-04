@@ -1,15 +1,11 @@
 # TO DOs
 
-- [x] check whether is running on G2T python==3.9.21 (if used in final pipe) (optional)
-- [x] baseline model - run with example glosses ONGOING
-  - [x] add files from _my_ssd_mobnet_ to _sample_model_ folder
-- [ ] **PHOENIX weather model**
-  - [ ] create labeled images of new glosses
+- [ ] PHOENIX weather model
+  - [x] create labeled images of new glosses
   - [x] delete my_ssd_mobnet folder 
   - [ ] run updated code - label list, train test split, label map, rf record files, config (change no. of classes)
-- [ ]**upload sl_rtod folder & update used_requirements.txt**
-- [ ] **streamlit.app - create code to run sl_rtod with webacm**
-  - setup _streamlit_sl_rtod.py_ file
+- [ ] check whether is running on G2T python==3.9.21 (if used in final pipe) (optional)
+- [ ] setup _streamlit_sl_rtod.py_ file
 - [ ] _transform data to increase training data size and re-train the model (optional)_
 
 # Credits

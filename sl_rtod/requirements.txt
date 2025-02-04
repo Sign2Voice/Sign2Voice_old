@@ -1,4 +1,4 @@
-# setup .venv with python 3.10
+# setup .venv with python 3.10.16
 
 # create images - modules needed
 opencv-python
