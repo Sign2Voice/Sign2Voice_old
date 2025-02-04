@@ -75,5 +75,5 @@ video_url = "https://wdrvod-rwrtr.akamaized.net/i/,/medp/ondemand/weltweit/fsk0/
 start_time = 13 * 60 + 54  # 834 seconds
 
 # Save frames to a folder
-output_folder = "data/extracted_frames"
+output_folder = "st_to_txt/data/extracted_frames"
 save_video_frames(video_url, start_time, output_folder)

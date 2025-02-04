@@ -1,12 +1,96 @@
+import sys
 import streamlit as st
-import cv2
 import os
-from utils.stream_to_frames import save_frames_from_stream
+import shutil
+from PIL import Image
 import time  # Import for time measurement
+import cv2
 
-# Title and description
+# 🛠 Add root directories to Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath("Gloss2Text2Speech"))
+
+# ✅ Import custom functions
+from st_to_txt.process_frames import process_frames
+from gloss_to_text import gloss_to_text
+from text_to_speech import text_to_speech
+
+# 📌 Define paths
+UPLOAD_FOLDER = "st_to_txt/data/uploaded_frames"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+PHOENIX_MODEL_PATH = "CorrNet/pretrained_model/dev_18.90_PHOENIX14.pt"
+ADAPTER_MODEL_PATH = "Gloss2Text2Speech/pretrained/adapter_model.bin"
+
+# 🎬 **Streamlit App Title**
 st.title("Talk to the Hand 👋🏽")
-st.write("Here you can view the livestream.")
+
+# --- **Upload Section** ---
+st.title("📂 Upload Frames")
+uploaded_files = st.file_uploader(
+    "Upload your frames here (only images)", type=["png", "jpg", "jpeg"], accept_multiple_files=True
+)
+
+if uploaded_files:
+    st.write("🔄 Processing uploaded frames...")
+
+    # 📂 Save uploaded frames
+    for file in uploaded_files:
+        file_path = os.path.join(UPLOAD_FOLDER, file.name)
+        with open(file_path, "wb") as f:
+            f.write(file.getbuffer())
+
+    st.write("✅ Frames saved. Running model...")
+
+    # 🧠 Run model to get glosses
+    glosses = process_frames(PHOENIX_MODEL_PATH, UPLOAD_FOLDER, language="phoenix")
+
+    if glosses:
+        st.session_state.glosses = glosses  # 🌟 Store glosses
+        st.subheader("📖 Predicted Glosses")
+        st.write("📝", " ".join(glosses))
+
+        # 🔄 **Automatically Generate Sentence & Speech**
+        with st.spinner("⏳ Generating sentence and audio..."):
+            gloss_text = " ".join(glosses)
+
+            # 🧠 Convert Glosses → Sentence
+            generated_sentence = gloss_to_text(gloss_text)
+            st.subheader("📜 Generated Sentence")
+            st.write("📢", generated_sentence)
+
+            # 🔊 Convert Sentence → Speech
+            text_to_speech(generated_sentence)
+            st.success("✅ Text-to-Speech completed!")
+
+# --- **Frame Preview** ---
+if uploaded_files:
+    st.success(f"✅ {len(uploaded_files)} frames uploaded successfully!")
+
+    # 📂 **Clear the upload folder** (old frames)
+    shutil.rmtree(UPLOAD_FOLDER)
+    os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+    # 🖼 Save new uploaded frames
+    for idx, uploaded_file in enumerate(uploaded_files):
+        image = Image.open(uploaded_file)
+        frame_path = os.path.join(UPLOAD_FOLDER, f"frame_{idx:03d}.jpg")
+        image.save(frame_path)
+
+    # 🖼 **Preview uploaded frames**
+    st.subheader("📸 Frame Preview")
+    image_files = sorted(os.listdir(UPLOAD_FOLDER))[:5]  # Show max. 5 images
+    st.image([os.path.join(UPLOAD_FOLDER, img) for img in image_files], caption=image_files, width=200)
+
+
+
+
+
+st.write("Or")
+
+
+# Stream
+
+st.write("🎥 Start a livestream here.")
 
 # Status variable for the stream
 if "streaming" not in st.session_state:
@@ -38,7 +122,7 @@ if st.button("Stop Stream"):
     st.session_state.start_time = None  # Reset start time
 
 # Output folder for the frames
-output_folder = "data/saved_stream_frames"  # Set folder name
+output_folder = "st_to_txt/data/saved_stream_frames"  # Set folder name
 
 # Video capture object
 cap = cv2.VideoCapture(0)  # 0 for the webcam
@@ -99,6 +183,7 @@ else:
         )
     else:
         timer_placeholder.write("The stream is stopped. No time recorded.")
+
 
 # Translation section
 st.title("Translation 📕")

@@ -1,1 +1,0 @@
-#enthält den Haupt-Trainingscode.

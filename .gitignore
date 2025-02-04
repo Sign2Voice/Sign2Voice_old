@@ -139,3 +139,7 @@ models/*
 
 #ignore files in data
 data/
+
+#ignore pretrained models from uplaod
+adapter_model.bin
+dev_18.90_PHOENIX14.pt

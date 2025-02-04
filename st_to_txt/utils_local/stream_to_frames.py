@@ -31,6 +31,3 @@ def save_frames_from_stream(frame, output_folder, source_fps=30, save_fps=25, fr
         cv2.imwrite(frame_filename, frame_resized)
 
     return frame_count + 1
-
-
-
