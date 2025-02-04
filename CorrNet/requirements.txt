@@ -1,9 +1,0 @@
-matplotlib
-numpy
-opencv_python
-pandas
-Pillow
-PyYAML
-scipy
-six
-tqdm
