@@ -21,8 +21,8 @@ import sys
 # device = torch.device('cpu')
 
 # Paths to the files (please customise)
-adapter_model_path = "/Users/vanessatuerker/nf_bootcamp/Gloss2Text/pretrained"
-adapter_config_path = "/Users/vanessatuerker/nf_bootcamp/Gloss2Text/pretrained"
+adapter_model_path = "/Users/beni/projects/capstone_sl_txt_voice/Gloss2Text2Speech/pretrained"
+adapter_config_path = "/Users/beni/projects/capstone_sl_txt_voice/Gloss2Text2Speech/pretrained"
 
 # Load the base model and the tokeniser
 base_model_name = "facebook/nllb-200-3.3B"
@@ -56,6 +56,8 @@ output = model.generate(inputs.input_ids, max_length=50)
 # Decode and print the output
 output_text = tokenizer.decode(output[0], skip_special_tokens=True)
 print(output_text)
+
+
 
 # Load environment variables from .env file
 load_dotenv()
