@@ -3,10 +3,10 @@
 - [ ] PHOENIX weather model
   - [x] create labeled images of new glosses
   - [x] delete my_ssd_mobnet folder 
-  - [ ] run updated code - label list, train test split, label map, rf record files, config (change no. of classes)
-- [ ] check whether is running on G2T python==3.9.21 (if used in final pipe) (optional)
+  - [x] run updated code - label list, train test split, label map, rf record files, config (change no. of classes)
+- [x] check whether is running on G2T python==3.9.21 --> **NO 3.10. required**
 - [ ] setup _streamlit_sl_rtod.py_ file
-- [ ] _transform data to increase training data size and re-train the model (optional)_
+- [x] _transform data to increase training data size and re-train the model (optional)_
 
 # Credits
 
