@@ -22,7 +22,7 @@ print("✅ Model and adapter successfully loaded!")
 
 # Test the model
 # Sample data structure that represents a list of lists of tuples (Alternatively, a sample text can be entered manually)
-data = [[('MONDAY', 0), ('ALSO', 1), ('MORE', 2), ('CLOUDS', 3), ('THAN', 4), ('SUN', 5), ('PREDOMINANTLY', 6), ('RAIN', 7), ('PREDOMINANTLY', 8), ('THUNDERSTORM', 9)]]
+data = [[('MONTAG', 0), ('AUCH', 1), ('MEHR', 2), ('WOLKE', 3), ('DANN', 4), ('SONNE', 5), ('UBERWIEGEND', 6), ('REGEN', 7), ('UBERWIEGEND', 8), ('GEWITTER', 9)]]
 
 # Extract only the words/glosses from each inner list
 words = []

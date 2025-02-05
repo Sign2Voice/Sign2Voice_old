@@ -1,2 +1,2 @@
-[ Fri Jan 31 11:47:56 2025 ] Model:   slr_network.SLRModel.
-[ Fri Jan 31 11:47:56 2025 ] Weights: ./pretrained_model/dev_18.90_PHOENIX14.pt.
+[ Tue Feb  4 18:14:03 2025 ] Model:   slr_network.SLRModel.
+[ Tue Feb  4 18:14:03 2025 ] Weights: pretrained_model/dev_18.90_PHOENIX14.pt.

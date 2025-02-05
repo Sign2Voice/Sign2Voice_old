@@ -6,7 +6,7 @@ dataset_info:
   dict_path: ./preprocess/phoenix2014/gloss_dict.npy
   evaluation_dir: ./evaluation/slr_eval
   evaluation_prefix: phoenix2014-groundtruth
-decode_mode: beam
+decode_mode: max
 device: cpu
 eval_interval: 1
 evaluate_tool: python
@@ -21,7 +21,7 @@ feeder_args:
   num_gloss: -1
 ignore_weights: []
 load_checkpoints: null
-load_weights: ./pretrained_model/dev_18.90_PHOENIX14.pt
+load_weights: pretrained_model/dev_18.90_PHOENIX14.pt
 log_interval: 10000
 loss_weights:
   ConvCTC: 1.0
