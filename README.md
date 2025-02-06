@@ -84,5 +84,22 @@ Enhancing the system for better performance and usability:
 - ✅ Optimize processing speed – Improve model efficiency to reduce processing time
 - ✅ Enable real-time video input – Allow users to process continuous video streams instead of individual frames
 
+## Resources & References
+Our project is built upon several open-source frameworks and pretrained models. Here are the original repositories and resources we used:
+
+### CorrNet (Sign Language Recognition Model)
+- Repository: [CorrNet](https://github.com/hulianyuyy/CorrNet)
+- Paper: [CorrNet Research Paper](https://arxiv.org/abs/2303.03202)
+
+  ### Gloss2Text (Text Generation from Glosses)
+  - Repository: Gloss2Text Model
+  - Paper: Gloss2Text Paper
+ 
+
+
+
+
+
+  
 
 
