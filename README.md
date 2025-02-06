@@ -2,33 +2,39 @@
 We want to develop an application that enables deaf people to communicate with hearing individuals who do not know sign language. The app should recognize signs, translate them into text, and then convert this text into spoken language.
 
 ## Features
-** Recognition of sign language gestures from individual images (frames)
-** Translation of gestures into glosses using a neural network
-** Conversion of glosses into natural text
-** Speech output of the generated text (Text-to-Speech)
+- Recognition of sign language gestures from individual images (frames)
+- Translation of gestures into glosses using a neural network
+- Conversion of glosses into natural text
+- Speech output of the generated text (Text-to-Speech)
 
 ## Architecture of Sign2Voice
 Our system is structured in a modular pipeline, where each component plays a specific role in processing sign language gestures and converting them into speech. The architecture consists of four main stages:
 
 ### 1️⃣ Frame Processing (Input)
-** The application takes image frames as input.
-** These frames are either uploaded manually or extracted from a video.
-** OpenCV is used to preprocess the images before sending them to the recognition model.
+- The application takes image frames as input.
+- These frames are either uploaded manually or extracted from a video.
+- OpenCV is used to preprocess the images before sending them to the recognition model.
 
 ### 2️⃣ Sign Language Recognition (Gloss Prediction)
-** We use **CorrNet**, a deep learning model, to recognize glosses (simplified representations of sign language).
-** CorrNet processes the input frames and predicts a sequence of glosses, which represent the recognized signs.
-** The output at this stage is a structured sequence of glosses that will later be converted into natural text.
+- We use **CorrNet**, a deep learning model, to recognize glosses (simplified representations of sign language).
+- CorrNet processes the input frames and predicts a sequence of glosses, which represent the recognized signs.
+- The output at this stage is a structured sequence of glosses that will later be converted into natural text.
 
 ### 3️⃣ Gloss-to-Text Translation
-** The predicted glosses are translated into full sentences using our **Gloss2Text** model.
-** Gloss2Text ensures that the generated sentences are grammatically correct and contextually meaningful.
-** The final output of this step is a fully structured natural language sentence, making it easier for non-signing people to understand
+- The predicted glosses are translated into full sentences using our **Gloss2Text** model.
+- Gloss2Text ensures that the generated sentences are grammatically correct and contextually meaningful.
+- The final output of this step is a fully structured natural language sentence, making it easier for non-signing people to understand
 
 ### 4️⃣ Text-to-Speech Conversion (Output)
-** The generated sentence is sent to the OpenAI Text-to-Speech Model via the Audio API.
-** The model transforms the text into spoken words using OpenAI's advanced speech synthesis technology.
-** This allows for seamless playback in the Streamlit application, enhancing the user experience.
+- The generated sentence is sent to the OpenAI Text-to-Speech Model via the Audio API.
+- The model transforms the text into spoken words using OpenAI's advanced speech synthesis technology.
+- This allows for seamless playback in the Streamlit application, enhancing the user experience.
+
+### How the Components Work Together
+- 1️⃣ User uploads frames (or extracts them from a video).
+- 2️⃣ CorrNet processes the frames and predicts glosses.
+- 3️⃣ Gloss2Text translates the glosses into full sentences.
+- 4️⃣ The final text is converted into real-time speech using OpenAI's Text-to-Speech API and streamed via PyAudio.
 
 
 To Run the Application use ```BASH streamlit run st_to_txt/streamlit_app.py ```
