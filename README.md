@@ -91,9 +91,9 @@ Our project is built upon several open-source frameworks and pretrained models. 
 - Repository: [CorrNet](https://github.com/hulianyuyy/CorrNet)
 - Paper: [CorrNet Research Paper](https://arxiv.org/abs/2303.03202)
 
-  ### Gloss2Text (Text Generation from Glosses)
-  - Repository: Gloss2Text Model
-  - Paper: Gloss2Text Paper
+### Gloss2Text (Text Generation from Glosses)
+- Repository: Gloss2Text Model
+- Paper: Gloss2Text Paper
  
 
 
