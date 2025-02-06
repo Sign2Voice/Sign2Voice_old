@@ -21,7 +21,7 @@ class Decode(object):
         print("✅ Debug: self.g2i_dict:", self.g2i_dict)
 
         self.num_classes = num_classes
-        self.search_mode = search_mode
+        self.search_mode = "max"
         self.blank_id = blank_id
         
         self.vocab =  ['|']+['-']+[chr(x) for x in range(20000, 20000 + num_classes)]
@@ -38,7 +38,7 @@ class Decode(object):
         self.ctc_decoder = ctc_decoder(
             lexicon = None,
             tokens=self.vocab,
-            beam_size=3
+            beam_size=10
         )
         print(f"🔍 Debug: Verwende {self.ctc_decoder.__class__.__name__}")
 
@@ -53,6 +53,7 @@ class Decode(object):
             return self.MaxDecode(nn_output, vid_lgt)
         else:
             return self.BeamSearch(nn_output, vid_lgt, probs)
+        
         
     def BeamSearch(self, nn_output, vid_lgt, probs=False):
         if not probs:
@@ -131,7 +132,7 @@ class Decode(object):
         batchsize, lgt = index_list.shape
         ret_list = []
         for batch_idx in range(batchsize):
-            group_result = [x[0] for x in groupby(index_list[batch_idx][:vid_lgt[batch_idx]])]
+            group_result = [x[0] for x in groupby(index_list[batch_idx][:int(vid_lgt[batch_idx].item())])]
             filtered = [*filter(lambda x: x != self.blank_id, group_result)]
             if len(filtered) > 0:
                 max_result = torch.stack(filtered)
