@@ -102,28 +102,3 @@ urllib3==2.3.0
 uvicorn==0.34.0
 websockets==12.0
 zipp==3.21.0
-
-# sl_rtd requirements
-# setup .venv with python 3.10
-# create images - modules needed
-opencv-python
-labelimg
-# train model - modules needed
-pandas
-protobuf==3.20.3
-cython
-tensorflow==2.13 
-tensorflow-estimator==2.13
-tensorflow-io
-tf-models-official
-setuptools
-wheel
-pyyaml==5.1
-pillow
-# tf1 setup.py requirements
-matplotlib
-contextlib2 
-tf-slim  
-pycocotools 
-lvis 
-scipy
